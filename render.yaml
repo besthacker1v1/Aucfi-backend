@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: aucfi-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: DATABASE_PATH
+        value: ./aucfi.db
+      - key: SOLANA_RPC_URL
+        value: https://api.mainnet-beta.solana.com
+    autoDeploy: true
