@@ -5,6 +5,8 @@ import sqlite3 from 'better-sqlite3';
 import authRoutes from './routes/authRoutes.js';
 import auctionRoutes from './routes/auctionRoutes.js';
 import solanaRoutes from './routes/solanaRoutes.js'; // ✅ Solana route added
+import tradeRoutes from './routes/trade.js';
+
 
 dotenv.config();
 
@@ -30,6 +32,8 @@ app.use((req, res, next) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/auctions', auctionRoutes);
 app.use('/api/solana', solanaRoutes); // ✅ Solana route active
+app.use('/api/trade', tradeRoutes);
+
 
 // Root route
 app.get('/', (req, res) => {
